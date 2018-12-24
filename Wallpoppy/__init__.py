@@ -4,6 +4,7 @@
 __license__ = "Unlicense"
 __docformat__ = "reStructuredText"
 
+from .bg import *
 
 def run():
 	"""Run this module.
@@ -12,4 +13,10 @@ def run():
 	:rtype: none
 	.. todo::Implement this.
 	"""
-	return
+	session_bus = pydbus.SessionBus()
+	control = controlBus()
+	session_bus.publish("moe.hattshire.bg", control)
+
+	mainloop = GLib.MainLoop()
+	mainloop.run()
+

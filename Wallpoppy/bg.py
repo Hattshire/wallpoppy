@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 ## Public Domain
 
 
@@ -84,7 +84,7 @@ class controlBus(object):
 	"""
 	PropertiesChanged = pydbus.generic.signal()
 	BackgroundChanged = pydbus.generic.signal()
-	
+
 	ext_list = ['gif', 'png', 'tiff', 'jpeg', 'jpg']
 
 	def __init__(self):
@@ -205,11 +205,3 @@ class controlBus(object):
 		else:
 			self.__image_list.insert(toPosition, image)
 		return image
-
-
-if __name__ == "__main__":
-	session_bus = pydbus.SessionBus()
-	control = controlBus()
-	session_bus.publish("moe.hattshire.bg", control)
-	mainloop = GLib.MainLoop()
-	mainloop.run()
