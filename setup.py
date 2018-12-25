@@ -26,7 +26,7 @@ setup(
 	],
 	entry_points = {
 		'console_scripts': [
-			'wallpoppyd': 'Wallpoppy:run',
+			'wallpoppyd=Wallpoppy:run',
 		],
 	},
 	zip_safe = True,
